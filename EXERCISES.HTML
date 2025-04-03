@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>your page</title>
+</head>
+<body bgcolor="peachpuff">
+<center><font color=blue><font size=10>
+<h3 align=center>welcome to MOODMATE</h3>
+<img src="D:\234g1a05a5\project1\image.jpeg" height=200 breadth=200><br><br>
+<font size=6>
+<a href=D:\234g1a05a5\project1\HOME.html>HOME</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\MOODTRACKER.html>MOODTRACKER</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\EXERCISES.html>EXERCISES</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\RESOURCES.html>RESOURSES</a>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Well-Being Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #exercise-list {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #555;
+            background-color: #f0f4c3;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mental Well-Being Exercises</h1>
+    <div class="container">
+        <h2>Enter Your Mood</h2>
+        <input type="text" id="moodInput" placeholder="e.g., sad, happy, stressed">
+        <button onclick="showExercises()">Show Exercises</button>
+
+        <div id="exercise-list">
+            Enter your mood above to see recommended exercises!
+        </div>
+    </div>
+
+    <script>
+        function showExercises() {
+            const mood = document.getElementById("moodInput").value.trim().toLowerCase();
+            let exercises = "";
+
+            if (mood === "sad") {
+                exercises = `
+                    - Take a 15-minute walk outdoors.<br>
+                    - Listen to uplifting music.<br>
+                    - Practice gratitude: Write down 3 things you're thankful for.
+                `;
+            } else if (mood === "happy") {
+                exercises = `
+                    - Share your happiness with a friend.<br>
+                    - Try a new creative activity, like drawing or cooking.<br>
+                    - Write in a journal to capture this positive moment.
+                `;
+            } else if (mood === "stressed") {
+                exercises = `
+                    - Practice deep breathing (inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds).<br>
+                    - Do a 5-minute stretching routine.<br>
+                    - Drink a glass of water and take a short break.
+                `;
+            } else if (mood === "anxious") {
+                exercises = `
+                    - Try mindfulness meditation for 5 minutes.<br>
+                    - Write down your worries to organize your thoughts.<br>
+                    - Practice progressive muscle relaxation (tensing and releasing muscles).
+                `;
+            } else {
+                exercises = "Mood not recognized. Try entering 'sad', 'happy', 'stressed', or 'anxious'.";
+            }
+
+            document.getElementById("exercise-list").innerHTML = exercises;
+        }
+    </script>
+</body>
+</html>

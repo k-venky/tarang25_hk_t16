@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>your page</title>
+</head>
+<body bgcolor="peachpuff">
+<center><font color=blue><font size=10>
+<h3 align=center>welcome to MOODMATE</h3>
+<img src="D:\234g1a05a5\project1\image.jpeg" height=200 breadth=200><br><br>
+<font size=6>
+<a href=D:\234g1a05a5\project1\HOME.html>HOME</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\MOODTRACKER.html>MOODTRACKER</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\EXERCISES.html>EXERCISES</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\RESOURCES.html>RESOURSES</a>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealing with Personal Pressure</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6fc;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #6a5acd;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            text-align: left;
+            margin: 20px auto;
+            padding: 0;
+            max-width: 600px;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #5845b9;
+        }
+
+        .hidden {
+            display: none;
+            background-color: #effaf0;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .hidden p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dealing with Personal Pressure</h1>
+        <ul>
+            <li>Practice mindfulness to reduce stress and anxiety.</li>
+            <li>Set aside time for journaling to organize your thoughts.</li>
+            <li>Limit screen time and spend more time outdoors.</li>
+            <li>Focus on positive self-talk to combat negative thinking.</li>
+            <li>Stay connected with family and close friends for emotional support.</li>
+        </ul>
+        <button class="button" onclick="toggleTips()">View Additional Tips</button>
+        <div id="extraTips" class="hidden">
+            <h3>Additional Tips:</h3>
+            <p><strong>1. Mindfulness Apps:</strong> Use apps like Headspace or Calm to practice daily meditation and relaxation techniques.</p>
+            <p><strong>2. Join Support Groups:</strong> Consider joining online or local community groups to share experiences and find solidarity.</p>
+            <p><strong>3. Gratitude Journaling:</strong> Write down 3 things you’re grateful for each day to improve emotional resilience.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleTips() {
+            const tips = document.getElementById("extraTips");
+            if (tips.style.display === "none" || tips.classList.contains("hidden")) {
+                tips.style.display = "block";
+                tips.classList.remove("hidden");
+            } else {
+                tips.style.display = "none";
+                tips.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

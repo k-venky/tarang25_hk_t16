@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>your page</title>
+</head>
+<body bgcolor="peachpuff">
+<center><font color=blue><font size=10>
+<h3 align=center>welcome to MOODMATE</h3>
+<img src="D:\234g1a05a5\project1\image.jpeg" height=200 breadth=200><br><br>
+<font size=6>
+<a href=D:\234g1a05a5\project1\HOME.html>HOME</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\MOODTRACKER.html>MOODTRACKER</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\EXERCISES.html>EXERCISES</a>&nbsp;&nbsp;&nbsp;
+<a href=D:\234g1a05a5\project1\RESOURCES.html>RESOURSES</a>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker with Bar Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0f7fa;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .chart-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            height: 200px;
+            margin-top: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .bar {
+            width: 60px;
+            margin: 0 10px;
+            text-align: center;
+            background-color: #6a5acd;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .bar span {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mood Tracker</h1>
+    <div class="container">
+        <h2>Enter Your Mood</h2>
+        <input type="text" id="moodInput" placeholder="e.g., happy, sad, stressed">
+        <button onclick="trackMood()">Add Mood</button>
+        <div class="chart-container" id="chartContainer">
+            <!-- Bars will appear here -->
+        </div>
+    </div>
+
+    <script>
+        const moodCounts = {};
+        let totalMoods = 0;
+
+        function trackMood() {
+            const moodInput = document.getElementById("moodInput").value.trim().toLowerCase();
+            if (!moodInput) {
+                alert("Please enter a mood.");
+                return;
+            }
+
+            // Update mood count
+            if (moodCounts[moodInput]) {
+                moodCounts[moodInput]++;
+            } else {
+                moodCounts[moodInput] = 1;
+            }
+            totalMoods++;
+
+            updateChart();
+            document.getElementById("moodInput").value = ""; // Clear input field
+        }
+
+        function updateChart() {
+            const chartContainer = document.getElementById("chartContainer");
+            chartContainer.innerHTML = ""; // Clear chart
+
+            for (const [mood, count] of Object.entries(moodCounts)) {
+                const percentage = ((count / totalMoods) * 100).toFixed(1); // Calculate percentage
+
+                const bar = document.createElement("div");
+                bar.className = "bar";
+                bar.style.height = `${percentage * 2}px`; // Scale bar height
+                bar.innerHTML = `<span>${mood}</span><span>${percentage}%</span>`;
+
+                chartContainer.appendChild(bar);
+            }
+        }
+    </script>
+</body>
+</html>
